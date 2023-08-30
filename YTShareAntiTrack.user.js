@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         YTShareAntiTrack
+// @namespace    https://github.com/Xenorio/YTShareAntiTrack
+// @version      0.1
+// @description  Remove any tracking parameters from the YouTube share feature
+// @author       xenorio
+// @match        https://www.youtube.com/watch*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
 // Copyright (C) 2023 Marcus Huber (xenorio) <dev@xenorio.xyz>
 // 
 // This program is free software: you can redistribute it and/or modify
@@ -12,17 +23,6 @@
 // 
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-// ==UserScript==
-// @name         YTShareAntiTrack
-// @namespace    https://github.com/Xenorio/YTShareAntiTrack
-// @version      0.1
-// @description  Remove any tracking parameters from the YouTube share feature
-// @author       xenorio
-// @match        https://www.youtube.com/watch*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
-// ==/UserScript==
 
 (function() {
 
