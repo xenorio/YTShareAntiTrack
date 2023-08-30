@@ -29,11 +29,27 @@
 	// ID of the share URL input element
     const targetElementId = 'share-url';
 
+	// Parameters which are allowed to stay in the URL
+	const allowedParams = [
+		"t" // start time
+	]
+
     // Element has been loaded/changed, update URL
     function handleTargetElement(targetElement) {
 
-		// Remove everything after and including the "?" in the URL
-        let newValue = targetElement.value.split('?')[0]
+		let url = new URL(targetElement.value)
+		let params = url.searchParams
+
+		// Remove all parameters that are not allowed
+		for(let param of params.keys()){
+			if(!allowedParams.includes(param)){
+				params.delete(param)
+			}
+		}
+
+		url.search = params
+
+        let newValue = url.toString()
 
 		// Abort if everything is already correct
         if(targetElement.value == newValue) return;
@@ -50,8 +66,7 @@
             if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
                 const targetElement = document.getElementById(targetElementId);
                 if (targetElement) {
-                    handleTargetElement(targetElement);
-                    break;
+                    setTimeout(() => {handleTargetElement(targetElement)}, 200)
                 }
             }
         }
