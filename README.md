@@ -10,3 +10,15 @@ Recently, YouTube started adding a tracking parameter to their share URLs, when 
 This userscript removes any parameters from this box, allowing you to safely copy the link without needing to manually modify it.
 
 ![Example](./example_good.png)
+
+## Installation
+
+First, you need a userscript manager. This script should work with any manager, but is only being tested on Tampermonkey.
+
+> - [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)<br>
+> - [Tampermonkey for Firefox](https://addons.mozilla.org/en/firefox/addon/tampermonkey/)<br>
+> - [Tampermonkey for Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)<br>
+> - [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)<br>
+> - [Userscripts for Safari (MacOS/iOS/iPadOS)](https://apps.apple.com/us/app/userscripts/id1463298887)<br>
+
+Once you have a manager, install YTShareAntiTrack by clicking [here](https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js).
