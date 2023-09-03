@@ -29,6 +29,9 @@
 	// ID of the share URL input element
     const targetElementId = 'share-url';
 
+	// How fast we should check for element changes (ms)
+	const updateInterval = 50
+
 	// Parameters which are allowed to stay in the URL
 	const allowedParams = [
 		"t" // start time
@@ -60,18 +63,12 @@
         targetElement.value = newValue
     }
 
-    // Await loading and changes of the input element
-    const observer = new MutationObserver(function(mutationsList) {
-        for (const mutation of mutationsList) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                const targetElement = document.getElementById(targetElementId);
-                if (targetElement) {
-                    setTimeout(() => {handleTargetElement(targetElement)}, 200)
-                }
-            }
-        }
-    });
+    setInterval(() => {
+		const targetElement = document.getElementById(targetElementId)
 
-    // Start observing changes in the DOM
-    observer.observe(document.body, { childList: true, subtree: true });
+		if(targetElement){
+			handleTargetElement(targetElement)
+		}
+	}, updateInterval)
+                
 })();
