@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Remove any tracking parameters from the YouTube share feature
 // @author       xenorio
-// @match        https://www.youtube.com*
+// @match        https://www.youtube.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
