@@ -7,7 +7,7 @@ Recently, YouTube started adding a tracking parameter to their share URLs, when 
 
 ![Example](./example_bad.png)
 
-This userscript removes any parameters from this box, allowing you to safely copy the link without needing to manually modify it.
+This userscript removes any tracking parameters from this box, allowing you to safely copy the link without needing to manually modify it.
 
 ![Example](./example_good.png)
 
