@@ -37,9 +37,10 @@
 		"t" // start time
 	]
 
-    // Element has been loaded/changed, update URL
+    // Element has been found, update URL
     function handleTargetElement(targetElement) {
 
+		// Set up a copy of the current URL to work on
 		let url = new URL(targetElement.value)
 		let params = url.searchParams
 
@@ -63,6 +64,7 @@
         targetElement.value = newValue
     }
 
+	// Repeatedly look for the element, and if it's there, change it
     setInterval(() => {
 		const targetElement = document.getElementById(targetElementId)
 
