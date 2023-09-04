@@ -1,11 +1,14 @@
 // ==UserScript==
 // @name         YTShareAntiTrack
 // @namespace    https://github.com/Xenorio/YTShareAntiTrack
-// @version      1.0.0
+// @updateURL    https://github.com/Xenorio/YTShareAntiTrack/releases/latest/download/YTShareAntiTrack.user.js
+// @version      1.0.1
+// @license      AGPLv3
 // @description  Remove any tracking parameters from the YouTube share feature
 // @author       xenorio
 // @match        https://www.youtube.com/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @match        https://www.youtube-nocookie.com/*
+// @match        https://m.youtube.com/*
 // @grant        none
 // ==/UserScript==
 
