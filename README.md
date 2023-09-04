@@ -20,4 +20,4 @@ First, you need a userscript manager. This script should work with any manager, 
 > - [Violentmonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)<br>
 > - [Userscripts for Safari (MacOS/iOS/iPadOS)](https://apps.apple.com/us/app/userscripts/id1463298887)<br>
 
-Once you have a manager, install YTShareAntiTrack by clicking [here](https://github.com/Xenorio/YTShareAntiTrack/releases/latest/download/YTShareAntiTrack.user.js).
+Once you have a manager, install YTShareAntiTrack by clicking [here](https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js).

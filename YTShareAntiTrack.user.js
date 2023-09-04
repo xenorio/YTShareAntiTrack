@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YTShareAntiTrack
 // @namespace    https://github.com/Xenorio/YTShareAntiTrack
-// @updateURL    https://github.com/Xenorio/YTShareAntiTrack/releases/latest/download/YTShareAntiTrack.user.js
+// @updateURL    https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js
 // @version      1.0.1
 // @license      AGPLv3
 // @description  Remove any tracking parameters from the YouTube share feature
