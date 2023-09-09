@@ -30,7 +30,7 @@
 (function() {
 
 	// ID of the share URL input element
-    const targetElementId = 'share-url';
+	const targetElementId = 'share-url';
 
 	// How fast we should check for element changes (ms)
 	const updateInterval = 50
@@ -40,8 +40,8 @@
 		"t" // start time
 	]
 
-    // Element has been found, update URL
-    function handleTargetElement(targetElement) {
+	// Element has been found, update URL
+	function handleTargetElement(targetElement) {
 
 		// Set up a copy of the current URL to work on
 		let url = new URL(targetElement.value)
@@ -56,24 +56,24 @@
 
 		url.search = params
 
-        let newValue = url.toString()
+		let newValue = url.toString()
 
 		// Abort if everything is already correct
-        if(targetElement.value == newValue) return;
+		if(targetElement.value == newValue) return;
 
-        console.log('[YTShareAntiTrack] Changing share url from ' + targetElement.value + ' to ' + newValue)
+		console.log('[YTShareAntiTrack] Changing share url from ' + targetElement.value + ' to ' + newValue)
 
 		// Update element
-        targetElement.value = newValue
-    }
+		targetElement.value = newValue
+	}
 
 	// Repeatedly look for the element, and if it's there, change it
-    setInterval(() => {
+	setInterval(() => {
 		const targetElement = document.getElementById(targetElementId)
 
 		if(targetElement){
 			handleTargetElement(targetElement)
 		}
 	}, updateInterval)
-                
+				
 })();
