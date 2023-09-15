@@ -2,12 +2,11 @@
 // @name         YTShareAntiTrack
 // @namespace    https://github.com/Xenorio/YTShareAntiTrack
 // @updateURL    https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js
-// @version      1.0.1
+// @version      1.1.0
 // @license      AGPLv3
 // @description  Remove any tracking parameters from the YouTube share feature
 // @author       xenorio
 // @match        https://www.youtube.com/*
-// @match        https://www.youtube-nocookie.com/*
 // @match        https://m.youtube.com/*
 // @grant        none
 // ==/UserScript==
@@ -27,10 +26,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(function() {
-
-	// ID of the share URL input element
-	const targetElementId = 'share-url';
+(function () {
 
 	// How fast we should check for element changes (ms)
 	const updateInterval = 50
@@ -40,6 +36,16 @@
 		"t" // start time
 	]
 
+	// Identifiers for all elements to target
+	const elementIdentifiers = {
+		id: [
+			'share-url' // Input field on desktop
+		],
+		class: [
+			'unified-share-url-input' // Input field on mobile
+		]
+	}
+
 	// Element has been found, update URL
 	function handleTargetElement(targetElement) {
 
@@ -48,8 +54,8 @@
 		let params = url.searchParams
 
 		// Remove all parameters that are not allowed
-		for(let param of params.keys()){
-			if(!allowedParams.includes(param)){
+		for (let param of params.keys()) {
+			if (!allowedParams.includes(param)) {
 				params.delete(param)
 			}
 		}
@@ -59,7 +65,7 @@
 		let newValue = url.toString()
 
 		// Abort if everything is already correct
-		if(targetElement.value == newValue) return;
+		if (targetElement.value == newValue) return;
 
 		console.log('[YTShareAntiTrack] Changing share url from ' + targetElement.value + ' to ' + newValue)
 
@@ -69,11 +75,25 @@
 
 	// Repeatedly look for the element, and if it's there, change it
 	setInterval(() => {
-		const targetElement = document.getElementById(targetElementId)
 
-		if(targetElement){
-			handleTargetElement(targetElement)
+		// Gather all elements which should be modified based on their ID
+		for (let identifier of elementIdentifiers.id) {
+			const element = document.getElementById(identifier)
+			if (element) {
+				handleTargetElement(element)
+			}
 		}
+
+		// Gather all elements which should be modified based on their class
+		for (let identifier of elementIdentifiers.class) {
+			const elements = document.getElementsByClassName(identifier)
+			if(elements){
+				for(let element of elements) {
+					handleTargetElement(element)
+				}
+			}
+		}
+
 	}, updateInterval)
-				
+
 })();
