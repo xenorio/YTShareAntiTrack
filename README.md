@@ -21,3 +21,9 @@ First, you need a userscript manager. This script should work with any manager, 
 > - [Userscripts for Safari (MacOS/iOS/iPadOS)](https://apps.apple.com/us/app/userscripts/id1463298887)<br>
 
 Once you have a manager, install YTShareAntiTrack by clicking [here](https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js).
+
+## Additional Measures
+
+This script only prevents you from accidentally sharing trackable links. It does not (and cannot) prevent you from loading trackable links which have been shared with you.
+
+However, you can prevent this via a custom rule in [uBlock](https://ublockorigin.com/): ``||youtube.com^$removeparam=si``
