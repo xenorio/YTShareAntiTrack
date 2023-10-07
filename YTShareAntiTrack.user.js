@@ -2,12 +2,13 @@
 // @name         YTShareAntiTrack
 // @namespace    https://github.com/Xenorio/YTShareAntiTrack
 // @updateURL    https://github.com/Xenorio/YTShareAntiTrack/raw/main/YTShareAntiTrack.user.js
-// @version      1.1.1
+// @version      1.2.0
 // @license      AGPL-3.0-or-later
 // @description  Remove any tracking parameters from the YouTube share feature
 // @author       xenorio
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
+// @match        https://music.youtube.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -34,7 +35,8 @@
 	// Parameters which are allowed to stay in the URL
 	const allowedParams = [
 		"t", // start time
-		"list" // playlist ID
+		"list", // playlist ID
+		"v" // video ID
 	]
 
 	// Identifiers for all elements to target
