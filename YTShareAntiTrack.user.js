@@ -9,7 +9,9 @@
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @match        https://music.youtube.com/*
-// @grant        none
+// @grant        GM.getValue
+// @grant        GM.setValue
+// @grant        GM.openInTab
 // ==/UserScript==
 
 // Copyright (C) 2023 Marcus Huber (xenorio) <dev@xenorio.xyz>
@@ -90,13 +92,37 @@
 		// Gather all elements which should be modified based on their class
 		for (let identifier of elementIdentifiers.class) {
 			const elements = document.getElementsByClassName(identifier)
-			if(elements){
-				for(let element of elements) {
+			if (elements) {
+				for (let element of elements) {
 					handleTargetElement(element)
 				}
 			}
 		}
 
 	}, updateInterval)
+
+	// Handle opening the notice page for transitioning to the TubeTweaks extension
+	try {
+
+		// Check if the notice has been opened already
+		GM.getValue("transitionPageVisited")
+			.then(hasVisited => {
+				if (hasVisited) return;
+
+				// Remember that the notice has already been opened
+				// We do this first to prevent race conditions which would open tons of tabs
+				GM.setValue("transitionPageVisited", true)
+
+				// Open the notice page, and focus it
+				GM.openInTab("https://extensions.xenorio.xyz/tubetweaks-migration", {
+					active: true
+				})
+
+			})
+
+	} catch (error) {
+		// GreaseMonkey API not supported
+		console.log('Goshdarn get a better userscript manager')
+	}
 
 })();
