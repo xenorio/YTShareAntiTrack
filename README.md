@@ -1,3 +1,5 @@
+> :warning: Development has shifted to the [TubeTweaks](https://extensions.xenorio.xyz/list/TubeTweaks) extension, with more features and better performance. YTShareAntiTrack will only receive updates if something breaks.
+
 # YTShareAntiTrack
 YouTube userscript to remove tracking parameters from share URLs
 
