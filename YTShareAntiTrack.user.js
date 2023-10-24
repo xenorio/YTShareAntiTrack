@@ -112,11 +112,14 @@
 				// Remember that the notice has already been opened
 				// We do this first to prevent race conditions which would open tons of tabs
 				GM.setValue("transitionPageVisited", true)
+					.then(() => {
 
-				// Open the notice page, and focus it
-				GM.openInTab("https://extensions.xenorio.xyz/tubetweaks-migration", {
-					active: true
-				})
+						// Open the notice page, and focus it
+						GM.openInTab("https://extensions.xenorio.xyz/tubetweaks-migration", {
+							active: true
+						})
+						
+					})
 
 			})
 
